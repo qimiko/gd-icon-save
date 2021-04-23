@@ -8,5 +8,6 @@
 #include "supportlayer.hpp"
 #include "moreoptionslayer.hpp"
 #include "profilepage.hpp"
+#include "gjgaragelayer.hpp"
 
 #endif
