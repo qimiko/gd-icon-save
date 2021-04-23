@@ -17,6 +17,9 @@ class IconKitObject : public cocos2d::CCObject {
     CC_SYNTHESIZE(uint32_t, _death_id, DeathID);
     CC_SYNTHESIZE(IconType, _player_frame, PlayerFrame);
 
+    CC_SYNTHESIZE(uint32_t, _col_1, Color1);
+    CC_SYNTHESIZE(uint32_t, _col_2, Color2);
+
     CC_SYNTHESIZE(bool, _has_glow, HasGlow);
 
 public:
@@ -35,6 +38,8 @@ public:
         this->_death_id = dict->getIntegerForKey("k9");
         this->_player_frame = static_cast<IconType>(dict->getIntegerForKey("k10"));
         this->_has_glow = dict->getBoolForKey("k11");
+        this->_col_1 = dict->getIntegerForKey("k12");
+        this->_col_2 = dict->getIntegerForKey("k13");
     }
 
     virtual void encodeWithCoder(DS_Dictionary* dict)
@@ -53,6 +58,8 @@ public:
         dict->setIntegerForKey("k10", static_cast<int>(this->_player_frame));
 
         dict->setBoolForKey("k11", this->_has_glow);
+        dict->setIntegerForKey("k12", this->_col_1);
+        dict->setIntegerForKey("k13", this->_col_2);
     }
 
     static IconKitObject* createWithCoder(DS_Dictionary* dict) {

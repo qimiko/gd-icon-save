@@ -10,6 +10,8 @@ class GameManager : public GManager {
 public:
     static GameManager* sharedState();
 
+    cocos2d::ccColor3B colorForIdx(int idx);
+
     void toggleGameVariable(const char* variableName);
     void setGameVariable(const char* variableName, bool);
     bool getGameVariable(const char* variableName);

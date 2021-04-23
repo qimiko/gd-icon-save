@@ -21,6 +21,8 @@ public:
         icon->setDeathID(score->getPlayerExplosion());
         icon->setPlayerFrame(score->getIconType());
         icon->setHasGlow(score->getGlowEnabled());
+        icon->setColor1(score->getPlayerColor1());
+        icon->setColor2(score->getPlayerColor2());
 
         auto gm = GameManager::sharedState();
         auto ext_obj = dynamic_cast<GameManager_ext*>(gm->getUserObject());
@@ -71,8 +73,10 @@ public:
         icon->setSpiderID(gm->getPlayerSpider());
         icon->setStreakID(gm->getPlayerStreak());
         icon->setDeathID(gm->getPlayerDeathEffect());
-				icon->setPlayerFrame(gm->getPlayerIconType());
+		icon->setPlayerFrame(gm->getPlayerIconType());
         icon->setHasGlow(gm->getPlayerGlow());
+        icon->setColor1(gm->getPlayerColor());
+        icon->setColor2(gm->getPlayerColor2());
 
         auto ext_obj = dynamic_cast<GameManager_ext*>(gm->getUserObject());
         if (ext_obj != nullptr) {
