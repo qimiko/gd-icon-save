@@ -4,6 +4,7 @@
 
 #include "base/module.hpp"
 #include "./icon/savedata.hpp"
+#include "./icon/add_btns.hpp"
 
 namespace IconKit {
 class Module : public Base::Module {

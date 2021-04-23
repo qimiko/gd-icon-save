@@ -7,5 +7,6 @@
 
 #include "supportlayer.hpp"
 #include "moreoptionslayer.hpp"
+#include "profilepage.hpp"
 
 #endif

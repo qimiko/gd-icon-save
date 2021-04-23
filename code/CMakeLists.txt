@@ -14,7 +14,8 @@ add_library(gdmod SHARED
   src/aura.cpp
   src/modules/default.cpp
   src/modules/icon.cpp
-  src/modules/icon/savedata.cpp)
+  src/modules/icon/savedata.cpp
+  src/modules/icon/add_btns.cpp)
 
 target_include_directories(gdmod PRIVATE
   ${CMAKE_CURRENT_SOURCE_DIR}/external/cocos2d/

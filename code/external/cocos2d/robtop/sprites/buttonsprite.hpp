@@ -16,6 +16,8 @@ public:
         const char* fontName, // font name
         const char* textureName, // might be texture name
         float labelHeight);
+    static ButtonSprite* create(cocos2d::CCSprite *sprite);
+
     void setColor(cocos2d::_ccColor3B);
 };
 

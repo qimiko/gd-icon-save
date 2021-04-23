@@ -3,7 +3,8 @@
 namespace IconKit {
 void Module::on_initialize()
 {
-    (new IconKit::SaveData::Module())->initialize();
+    IconKit::SaveData::Module().initialize();
+    IconKit::Btns::Module().initialize();
 
     return;
 }

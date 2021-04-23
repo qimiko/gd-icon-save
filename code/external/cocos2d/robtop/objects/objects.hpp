@@ -4,6 +4,7 @@
 
 #include "gameobject.hpp"
 #include "gjgamelevel.hpp"
+#include "gjuserscore.hpp"
 
 #include "objectdecoder.hpp"
 #include "gjobjectdecoder.hpp"

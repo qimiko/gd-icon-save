@@ -6,7 +6,7 @@
 
 namespace IconKit {
 class GameManager_ext : public cocos2d::CCObject {
-	CC_SYNTHESIZE(cocos2d::CCArray *, stored_kits, StoredKits);
+	CC_SYNTHESIZE_RETAIN(cocos2d::CCArray *, stored_kits, StoredKits);
 };
 }
 
