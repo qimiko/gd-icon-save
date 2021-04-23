@@ -1,0 +1,15 @@
+out/**
+code/build/**
+code/include/base/cmake_config.hpp
+code/external/cocos2d/libcocos2dcpp.so
+code/external/fmod/libfmod.so
+
+gd/**
+!gd/smali/com/robtopx/geometryjump/GeometryJump.smali
+
+build/**
+
+*.jar
+release.keystore
+keystore-pass
+build-apk.sh

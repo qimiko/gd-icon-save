@@ -1,0 +1,15 @@
+#pragma once
+#ifndef CMAKE_CONFIG_HPP
+#define CMAKE_CONFIG_HPP
+
+namespace CMakeConfiguration {
+constexpr auto HASH = "@GIT_SHA1@";
+constexpr auto COMMIT_SUBJECT = "@GIT_COMMIT_SUBJECT@";
+
+constexpr auto VER_MAJOR = @gdmod_VERSION_MAJOR@;
+constexpr auto VER_MINOR = @gdmod_VERSION_MINOR@;
+constexpr auto VER_PATCH = @gdmod_VERSION_PATCH@;
+
+constexpr auto COMPILE_TIME = "@COMPILE_TIME@";
+}
+#endif

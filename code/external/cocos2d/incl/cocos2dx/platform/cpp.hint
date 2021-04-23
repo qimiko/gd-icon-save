@@ -1,0 +1,30 @@
+#define CC_SYNTHESIZE(varType, varName, funName)\
+protected: varType varName;\
+public: virtual varType get##funName(void) const { return varName; }\
+public: virtual void set##funName(varType var){ varName = var; }
+
+#define CC_SYNTHESIZE_RETAIN(varType, varName, funName)    \
+private: varType varName; \
+public: virtual varType get##funName(void) const { return varName; } \
+public: virtual void set##funName(varType var)   \
+{ \
+    if (varName != var) \
+    { \
+        CC_SAFE_RETAIN(var); \
+        CC_SAFE_RELEASE(varName); \
+        varName = var; \
+    } \/
+}
+
+#define CC_SYNTHESIZE_READONLY(varType, varName, funName)\
+protected: varType varName;\
+public: virtual varType get##funName(void) const { return varName; }
+
+#define CC_PROPERTY(varType, varName, funName)\
+protected: varType varName;\
+public: virtual varType get##funName(void);\
+public: virtual void set##funName(varType var);
+
+#define CC_PROPERTY_READONLY(varType, varName, funName)\
+protected: varType varName;\
+public: virtual varType get##funName(void);
