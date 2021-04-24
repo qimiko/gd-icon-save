@@ -2,6 +2,7 @@
 #ifndef _OBJECTS_GJOBJECTDECODER_HPP
 #define _OBJECTS_GJOBJECTDECODER_HPP
 
+#include "objectdecoder.hpp"
 #include <cocos2d.h>
 
 class GJObjectDecoder : public ObjectDecoder {

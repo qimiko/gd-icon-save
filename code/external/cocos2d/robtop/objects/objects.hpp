@@ -6,8 +6,8 @@
 #include "gjgamelevel.hpp"
 #include "gjuserscore.hpp"
 
-#include "objectdecoder.hpp"
 #include "gjobjectdecoder.hpp"
+#include "objectdecoder.hpp"
 
 #include "gjchallengeitem.hpp"
 #include "gjrewarditem.hpp"

@@ -2,7 +2,7 @@
 
 using namespace IconKit;
 
-bool IconKitDialog::init(GJGarageLayer *garage)
+bool IconKitDialog::init(GJGarageLayer* garage)
 {
     if (this->initWithColor({ 0x00, 0x00, 0x00, 0x3B })) {
         auto ccd = cocos2d::CCDirector::sharedDirector();
@@ -16,7 +16,7 @@ bool IconKitDialog::init(GJGarageLayer *garage)
         this->setKeypadEnabled(true);
         this->setTouchEnabled(true);
 
-				this->setGarageLayer(garage);
+        this->setGarageLayer(garage);
 
         this->internalLayer_ = cocos2d::CCLayer::create();
         this->addChild(this->internalLayer_);

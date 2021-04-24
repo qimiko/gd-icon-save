@@ -58,26 +58,26 @@ protected:
 
 public:
     static GJUserScore* create();
-    static GJUserScore* create(cocos2d::CCDictionary *);
+    static GJUserScore* create(cocos2d::CCDictionary*);
 
-		bool isCurrentUser();
-		void mergeWithScore(GJUserScore *);
+    bool isCurrentUser();
+    void mergeWithScore(GJUserScore*);
 
-		inline IconType getIconType() const { return this->iconType_; };
+    inline IconType getIconType() const { return this->iconType_; };
 
-		inline int getPlayerCube() const { return this->playerCube_; };
-		inline int getPlayerShip() const { return this->playerShip_; };
-		inline int getPlayerBall() const { return this->playerBall_; };
-		inline int getPlayerUfo() const { return this->playerUfo_; };
-		inline int getPlayerWave() const { return this->playerWave_; };
-		inline int getPlayerRobot() const { return this->playerRobot_; };
-		inline int getPlayerSpider() const { return this->playerSpider_; };
-		inline int getPlayerStreak() const { return this->playerStreak_; };
-		inline bool getGlowEnabled() const { return this->glowEnabled_; };
-		inline int getPlayerExplosion() const { return this->playerExplosion_; };
+    inline int getPlayerCube() const { return this->playerCube_; };
+    inline int getPlayerShip() const { return this->playerShip_; };
+    inline int getPlayerBall() const { return this->playerBall_; };
+    inline int getPlayerUfo() const { return this->playerUfo_; };
+    inline int getPlayerWave() const { return this->playerWave_; };
+    inline int getPlayerRobot() const { return this->playerRobot_; };
+    inline int getPlayerSpider() const { return this->playerSpider_; };
+    inline int getPlayerStreak() const { return this->playerStreak_; };
+    inline bool getGlowEnabled() const { return this->glowEnabled_; };
+    inline int getPlayerExplosion() const { return this->playerExplosion_; };
 
-		inline int getPlayerColor1() const { return this->color1_; };
-		inline int getPlayerColor2() const { return this->color2_; };
+    inline int getPlayerColor1() const { return this->color1_; };
+    inline int getPlayerColor2() const { return this->color2_; };
 };
 
 #endif

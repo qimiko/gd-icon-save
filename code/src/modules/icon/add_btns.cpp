@@ -73,7 +73,7 @@ public:
         icon->setSpiderID(gm->getPlayerSpider());
         icon->setStreakID(gm->getPlayerStreak());
         icon->setDeathID(gm->getPlayerDeathEffect());
-		icon->setPlayerFrame(gm->getPlayerIconType());
+        icon->setPlayerFrame(gm->getPlayerIconType());
         icon->setHasGlow(gm->getPlayerGlow());
         icon->setColor1(gm->getPlayerColor());
         icon->setColor2(gm->getPlayerColor2());

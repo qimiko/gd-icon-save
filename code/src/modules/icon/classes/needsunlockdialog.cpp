@@ -31,7 +31,7 @@ bool NeedUnlockDialog::init(std::vector<std::pair<uint32_t, UnlockType>> unlockR
         layer_label->setPosition(win_size.width / 2, (win_size.height / 2) + 95.0f);
         layer_label->setScale(0.8f);
 
-				constexpr auto initial_displacement = -115.0f;
+        constexpr auto initial_displacement = -115.0f;
 
         // actual layer stuff here
         auto gm = GameManager::sharedState();
@@ -46,7 +46,7 @@ bool NeedUnlockDialog::init(std::vector<std::pair<uint32_t, UnlockType>> unlockR
 
             item_icon->setPosition(cocos2d::CCPoint(pos_x_tracker, pos_y_tracker));
 
-						pos_x_tracker += 75.0f;
+            pos_x_tracker += 75.0f;
             if (icon_count % 4 == 0) {
                 pos_x_tracker = (win_size.width / 2) + initial_displacement;
                 pos_y_tracker += -45.0f;

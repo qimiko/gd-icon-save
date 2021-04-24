@@ -7,9 +7,9 @@
 
 class AchievementManager : public cocos2d::CCNode {
 public:
-	static AchievementManager* sharedState();
-  const char* achievementForUnlock(int, UnlockType);
-  cocos2d::CCDictionary* getAchievementsWithID(const char *);
+    static AchievementManager* sharedState();
+    const char* achievementForUnlock(int, UnlockType);
+    cocos2d::CCDictionary* getAchievementsWithID(const char*);
 };
 
 #endif

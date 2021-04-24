@@ -5,7 +5,7 @@
 #include "buttonsprite.hpp"
 #include "ccmenuitemspriteextra.hpp"
 #include "ccspriteplus.hpp"
-#include "simpleplayer.hpp"
 #include "gjitemicon.hpp"
+#include "simpleplayer.hpp"
 
 #endif

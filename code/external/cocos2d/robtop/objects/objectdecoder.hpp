@@ -6,8 +6,8 @@
 
 class ObjectDecoder : public cocos2d::CCNode {
 public:
-	static ObjectDecoder *sharedDecoder();
-	virtual cocos2d::CCObject *getDecodedObject(int, DS_Dictionary *);
+    static ObjectDecoder* sharedDecoder();
+    virtual cocos2d::CCObject* getDecodedObject(int, DS_Dictionary*);
 };
 
 #endif

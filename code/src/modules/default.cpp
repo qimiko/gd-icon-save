@@ -34,7 +34,7 @@ void SupportLayer_customSetup_H(SupportLayer* self)
 {
     SupportLayer_customSetup_O(self);
 
-    auto internal_layer = get_from_offset<cocos2d::CCLayer *>(self, 0x1B4);
+    auto internal_layer = get_from_offset<cocos2d::CCLayer*>(self, 0x1B4);
 
     auto director = cocos2d::CCDirector::sharedDirector();
 

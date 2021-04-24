@@ -5,17 +5,17 @@
 #include <cocos2d.h>
 
 class GManager : public cocos2d::CCNode {
-    protected:
-        std::string m_sFileName;
-        bool m_bSetup;
-        bool m_bSaved;
+protected:
+    std::string m_sFileName;
+    bool m_bSetup;
+    bool m_bSaved;
 
-    public:
-        void save();
-        virtual void setup();
-        virtual void encodeDataTo(DS_Dictionary* data);
-        virtual void dataLoaded(DS_Dictionary* data);
-        virtual void firstLoad();
+public:
+    void save();
+    virtual void setup();
+    virtual void encodeDataTo(DS_Dictionary* data);
+    virtual void dataLoaded(DS_Dictionary* data);
+    virtual void firstLoad();
 };
 
 #endif

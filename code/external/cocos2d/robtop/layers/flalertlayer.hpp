@@ -4,6 +4,8 @@
 
 #include <cocos2d.h>
 
+#include "scrollinglayer.hpp"
+
 #include <robtop/protocols/flalertlayerprotocol.hpp>
 #include <robtop/sprites/buttonsprite.hpp>
 
@@ -24,6 +26,7 @@ protected:
     int scrollTracker_;
     bool containsActions_;
     bool noBtnAction_;
+
 public:
     static FLAlertLayer* create(FLAlertLayerProtocol*, const char* title,
         std::string text, const char* leftBtn,
@@ -35,7 +38,7 @@ public:
     create(FLAlertLayerProtocol*, const char*, std::string text, const char*,
         const char*, float, bool isScrolling,
         float height); // scrolling dialog is created under assumption that
-        // height >= 300
+    // height >= 300
 
     virtual void show();
 

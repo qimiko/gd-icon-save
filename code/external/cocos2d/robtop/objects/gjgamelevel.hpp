@@ -7,7 +7,7 @@
 class GJGameLevel : public cocos2d::CCNode {
 public:
     static GJGameLevel* create();
-    static GJGameLevel* createWithCoder(DS_Dictionary *);
+    static GJGameLevel* createWithCoder(DS_Dictionary*);
 };
 
 #endif
