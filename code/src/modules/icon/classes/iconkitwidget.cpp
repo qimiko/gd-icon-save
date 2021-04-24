@@ -83,7 +83,37 @@ void IconKitWidget::onUseKit(cocos2d::CCObject* target)
     this->convertToNodeSpace(center_point);
 
     if (this->_garage_layer != nullptr) {
-        // update simpleplayer here :)
+        auto garage_preview = *reinterpret_cast<SimplePlayer **>(reinterpret_cast<uintptr_t>(this->_garage_layer) + 0x134);
+
+        auto id = 1u;
+        switch (icon->getPlayerFrame()) {
+            case IconType::Cube:
+                id = icon->getCubeID();
+                break;
+            case IconType::Ship:
+                id = icon->getShipID();
+                break;
+            case IconType::Ball:
+                id = icon->getBallID();
+                break;
+            case IconType::Ufo:
+                id = icon->getUfoID();
+                break;
+            case IconType::Wave:
+                id = icon->getWaveID();
+                break;
+            case IconType::Robot:
+                id = icon->getRobotID();
+                break;
+            case IconType::Spider:
+                id = icon->getSpiderID();
+                break;
+            default:
+                break;
+        }
+
+        garage_preview->updatePlayerFrame(id, icon->getPlayerFrame());
+        this->_garage_layer->updatePlayerColors();
     }
 
     auto popup = FLAlertLayer::create(nullptr, "Icons loaded", "Custom icon kit has been loaded to your user.", "OK", nullptr);
