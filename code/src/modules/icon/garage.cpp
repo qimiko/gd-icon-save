@@ -30,7 +30,7 @@ bool GJGarageLayer_init_H(GJGarageLayer* self)
 
         auto ccd = cocos2d::CCDirector::sharedDirector();
 
-        open_iconkits_menu->setPosition(ccd->getScreenLeft() + 30.0f, ccd->getScreenBottom() + 100.0f);
+        open_iconkits_menu->setPosition(ccd->getScreenLeft() + 25.0f, ccd->getScreenBottom() + 90.0f);
 
         return true;
     }

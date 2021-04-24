@@ -86,7 +86,7 @@ void IconKitWidget::onUseKit(cocos2d::CCObject* target)
         // update simpleplayer here :)
     }
 
-    auto popup = FLAlertLayer::create(nullptr, "Icons loaded", "Custom icon kit has been loaded", "OK", nullptr);
+    auto popup = FLAlertLayer::create(nullptr, "Icons loaded", "Custom icon kit has been loaded to your user.", "OK", nullptr);
     popup->show();
 }
 
