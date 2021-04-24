@@ -47,7 +47,6 @@ cocos2d::CCObject* GJObjectDecoder_getDecodedObject_H(GJObjectDecoder* self, int
     case 53:
         return IconKitObject::createWithCoder(dict);
     default:
-        cocos2d::CCLog("Unimp Obj Decoder: %i", type);
         return nullptr;
     }
 }
