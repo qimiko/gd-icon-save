@@ -4,11 +4,11 @@
 
 #include <cocos2dcpp.h>
 
-#include <vector>
 #include <utility>
+#include <vector>
 
-#include "iconkitobject.hpp"
 #include "gamemanager_ext.hpp"
+#include "iconkitobject.hpp"
 
 namespace IconKit {
 class IconKitWidget : public cocos2d::CCNode {
@@ -30,8 +30,8 @@ class IconKitWidget : public cocos2d::CCNode {
 
     virtual bool init(IconKitObject*);
 
-    void onDeleteKit(cocos2d::CCObject *);
-    void onUseKit(cocos2d::CCObject *);
+    void onDeleteKit(cocos2d::CCObject*);
+    void onUseKit(cocos2d::CCObject*);
 };
 }
 #endif

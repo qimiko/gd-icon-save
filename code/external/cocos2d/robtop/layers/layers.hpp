@@ -2,6 +2,7 @@
 #ifndef _LAYERS_HPP
 #define _LAYERS_HPP
 
+#include "scrollinglayer.hpp"
 #include "flalertlayer.hpp"
 #include "gjdropdownlayer.hpp"
 

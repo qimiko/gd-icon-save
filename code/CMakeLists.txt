@@ -15,7 +15,9 @@ add_library(gdmod SHARED
   src/modules/default.cpp
   src/modules/icon.cpp
   src/modules/icon/classes/iconkitwidget.cpp
+  src/modules/icon/classes/iconkitdialog.cpp
   src/modules/icon/savedata.cpp
+  src/modules/icon/garage.cpp
   src/modules/icon/add_btns.cpp)
 
 target_include_directories(gdmod PRIVATE

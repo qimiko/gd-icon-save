@@ -17,7 +17,7 @@ void IconKitWidget::onUseKit(cocos2d::CCObject* target)
 {
     auto gm = GameManager::sharedState();
 
-		auto icon = this->getKitObject();
+    auto icon = this->getKitObject();
 
     gm->setPlayerFrame(icon->getCubeID());
     gm->setPlayerShip(icon->getShipID());
@@ -37,10 +37,10 @@ void IconKitWidget::onUseKit(cocos2d::CCObject* target)
         // update simpleplayer there :)
     }
 
-		auto ccd = cocos2d::CCDirector::sharedDirector();
-		auto win_size = ccd->getWinSize();
-		auto center_point = cocos2d::CCPoint(win_size.width / 2, win_size.height / 2);
-		this->convertToNodeSpace(center_point);
+    auto ccd = cocos2d::CCDirector::sharedDirector();
+    auto win_size = ccd->getWinSize();
+    auto center_point = cocos2d::CCPoint(win_size.width / 2, win_size.height / 2);
+    this->convertToNodeSpace(center_point);
 
     auto popup = TextAlertPopup::create("Icons loaded", 0.5f, 0.6f);
     this->addChild(popup, 100);

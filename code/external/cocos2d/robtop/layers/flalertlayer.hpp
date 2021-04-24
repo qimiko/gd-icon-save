@@ -5,8 +5,25 @@
 #include <cocos2d.h>
 
 #include <robtop/protocols/flalertlayerprotocol.hpp>
+#include <robtop/sprites/buttonsprite.hpp>
 
 class FLAlertLayer : public cocos2d::CCLayerColor {
+protected:
+    // special thanks to shira :gron:
+    cocos2d::CCMenu* btnMenu_;
+    int controllersConnected_;
+    FLAlertLayerProtocol* PParent_;
+    cocos2d::CCScene* targetScene_;
+    bool reverseKeyBack_ : 4;
+    cocos2d::CCLayer* internalLayer_;
+    int ZValue_;
+    bool showInstant_ : 4;
+    ButtonSprite* btn1_;
+    ButtonSprite* btn2_;
+    ScrollingLayer* scrollLayer_;
+    uint32_t unknownInt_;
+    bool containsActions_;
+    bool noBtnAction_;
 public:
     static FLAlertLayer* create(FLAlertLayerProtocol*, const char* title,
         std::string text, const char* leftBtn,
@@ -21,6 +38,8 @@ public:
         // height >= 300
 
     virtual void show();
+
+    void registerWithTouchDispatcher();
 };
 
 #endif
