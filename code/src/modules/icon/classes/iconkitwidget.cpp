@@ -44,7 +44,7 @@ void IconKitWidget::onUseKit(cocos2d::CCObject* target)
 
     auto popup = TextAlertPopup::create("Icons loaded", 0.5f, 0.6f);
     this->addChild(popup, 100);
-    this->setPosition(center_point);
+    popup->setPosition(center_point);
 }
 
 bool IconKitWidget::init(IconKitObject* kit_obj)

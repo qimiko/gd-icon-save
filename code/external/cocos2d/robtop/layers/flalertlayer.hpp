@@ -21,7 +21,7 @@ protected:
     ButtonSprite* btn1_;
     ButtonSprite* btn2_;
     ScrollingLayer* scrollLayer_;
-    uint32_t unknownInt_;
+    int scrollTracker_;
     bool containsActions_;
     bool noBtnAction_;
 public:
