@@ -1,30 +1,22 @@
-# 1.9 GDPS Android Modifications
+# Geometry Dash Android Icon Kit Storage
 
-## Requirements
+A Geometry Dash 2.11 Android hack that adds RobTop-like icon kit storage to the game.
 
-* APKTool in path
-* android-ndk-r17 or below (must support gnustl)
+## Screenshots
 
-## External patches
+![Selecting kit](/docs/screenshot_kitselect.png?raw=true)
+![Saving icon on garage](/docs/screenshot_garagesave.png?raw=true)
+![Saving icon kit on profile](/docs/screenshot_profilesave.png?raw=true)
+![Missing unlocks for set dialog](/docs/screenshot_missingunlock.png?raw=true)
 
-The following external patches have been applied:
+## Building
 
-### Within libcocos2dcpp.so
+Due to the copyrighted nature of Geometry Dash, the program will be provided as a shared library release only. If you wish to modify this application, or automate the APK building process, these are the steps to take:
 
-* Object Bypass (look for references to EditorUI::showMaxError)
-* Editor Song Length bypass `0x23C790` -> `0x09`
-* URLs
-  * Tools page
-  * Twitter
-  * YouTube
-  * Facebook
-* Comment Ban Message
+1. Recreate `build-apk.sh` - a version of the script is provided as `build-apk-default.sh` but **does not sign APKs**. The personal build version of the script utilizes [uber-apk-signer](https://github.com/patrickfav/uber-apk-signer) in order to automate the signing process.
 
-### Within smali
+2. Place an **unmodified** version of the Geometry Dash 2.11 APK in the root directory and run `setup.sh`. Ensure that `apktool` is in your path, or the script will fail.
 
-com.kyurime.geometryjump.GeometryJump.smali: in main
+3. Setup CMake with Android NDK toolchain file in the newly created `build` directory.
 
-```smali
-const-string v0, "aurav2"
-invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
-```
+4. Run CMake's install target in order to compile the APK file and copy it to the `out` folder.
