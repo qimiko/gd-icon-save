@@ -20,3 +20,9 @@ Due to the copyrighted nature of Geometry Dash, the program will be provided as 
 3. Setup CMake with Android NDK toolchain file in the newly created `build` directory.
 
 4. Run CMake's install target in order to compile the APK file and copy it to the `out` folder.
+
+## Special Thanks
+
+* [Andre](https://github.com/AndreNIH), [CappuccinoSDK](https://github.com/AndreNIH/CappuccinoSDK)
+* [Mat](https://github.com/matcool), kept asking where Android was (it's here now)
+* Anyone who helped with the 1.9 GDPS Android code
