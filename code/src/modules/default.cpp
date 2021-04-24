@@ -50,7 +50,7 @@ void SupportLayer_customSetup_H(SupportLayer* self)
 
     legal_menu->addChild(legal_button);
 
-    auto legal_button_position = cocos2d::CCPoint(60.0f, -90.0f);
+    auto legal_button_position = cocos2d::CCPoint(140.0f, -60.0f);
     legal_button->setPosition(legal_button_position);
 
     return;

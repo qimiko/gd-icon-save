@@ -66,8 +66,8 @@
 		"ranges": "cpp"
 	},
 	"files.watcherExclude": {
-		"**/aurav2/external/**": true,
+		"**/code/external/**": true,
 		"**/build/**": true,
-		"**/gdps/**": true
+		"**/gd/**": true
 	}
 }
