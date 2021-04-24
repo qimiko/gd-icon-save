@@ -16,9 +16,19 @@ class IconKitDialog : public FLAlertLayer {
     CC_SYNTHESIZE_RETAIN(GJGarageLayer*, _garage_layer, GarageLayer);
     CC_SYNTHESIZE(uint32_t, _list_count, ListCount);
 
-    CREATE_FUNC(IconKitDialog);
-
-    virtual bool init();
+    static IconKitDialog* create(GJGarageLayer* garage = nullptr)
+    {
+        IconKitDialog* pRet = new IconKitDialog();
+        if (pRet && pRet->init(garage)) {
+            pRet->autorelease();
+            return pRet;
+        } else {
+            delete pRet;
+            pRet = nullptr;
+            return nullptr;
+        }
+    }
+    bool init(GJGarageLayer *garage);
 
     void onClose(cocos2d::CCObject*)
     {

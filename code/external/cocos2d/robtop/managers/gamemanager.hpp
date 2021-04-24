@@ -19,6 +19,9 @@ public:
     void setIntGameVariable(const char* keyName, int);
     int getIntGameVariable(const char* keyName);
 
+    bool isIconUnlocked(int, IconType);
+    bool isColorUnlocked(int, bool);
+
     inline int getPlayerBall() const {
         return *reinterpret_cast<int*>(reinterpret_cast<uintptr_t>(this) + 0x1B8);
     }

@@ -16,6 +16,7 @@ add_library(gdmod SHARED
   src/modules/icon.cpp
   src/modules/icon/classes/iconkitwidget.cpp
   src/modules/icon/classes/iconkitdialog.cpp
+  src/modules/icon/classes/needsunlockdialog.cpp
   src/modules/icon/savedata.cpp
   src/modules/icon/garage.cpp
   src/modules/icon/add_btns.cpp)

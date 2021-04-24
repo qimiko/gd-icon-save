@@ -3,6 +3,7 @@
 #define _MANAGERS_HPP
 
 #include "achievementnotifier.hpp"
+#include "achievementmanager.hpp"
 #include "appdelegate.hpp"
 #include "fmodaudioengine.hpp"
 #include "gamemanager.hpp"

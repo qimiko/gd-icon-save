@@ -2,7 +2,7 @@
 
 using namespace IconKit;
 
-bool IconKitDialog::init()
+bool IconKitDialog::init(GJGarageLayer *garage)
 {
     if (this->initWithColor({ 0x00, 0x00, 0x00, 0x3B })) {
         auto ccd = cocos2d::CCDirector::sharedDirector();
@@ -15,6 +15,8 @@ bool IconKitDialog::init()
 
         this->setKeypadEnabled(true);
         this->setTouchEnabled(true);
+
+				this->setGarageLayer(garage);
 
         this->internalLayer_ = cocos2d::CCLayer::create();
         this->addChild(this->internalLayer_);
@@ -55,6 +57,10 @@ bool IconKitDialog::init()
                 for (uint32_t i = 0; i < this->getListCount(); ++i) {
                     auto widget = IconKitWidget::create(dynamic_cast<IconKitObject*>(stored_kits->objectAtIndex(i)));
                     scrolling_internal_layer->addChild(widget);
+
+                    if (this->_garage_layer != nullptr) {
+                        widget->setGarageLayer(this->_garage_layer);
+                    }
                     // anchor point seems to be off, don't know why though
                     widget->setPosition(win_size.width / 2, (win_size.height / 2) + (i * -distance_between_frames) + 40.0f);
                 }
@@ -65,7 +71,7 @@ bool IconKitDialog::init()
                 none_saved_label->setPosition(win_size.width / 2, win_size.height / 2);
             }
         }
-				this->scrollTracker_ = -1;
+        this->scrollTracker_ = -1;
 
         // close btn
         auto close_btn_menu = cocos2d::CCMenu::create();

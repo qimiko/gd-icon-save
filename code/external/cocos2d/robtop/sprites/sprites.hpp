@@ -6,5 +6,6 @@
 #include "ccmenuitemspriteextra.hpp"
 #include "ccspriteplus.hpp"
 #include "simpleplayer.hpp"
+#include "gjitemicon.hpp"
 
 #endif

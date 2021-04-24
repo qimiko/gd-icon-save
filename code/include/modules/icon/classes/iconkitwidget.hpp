@@ -6,10 +6,11 @@
 
 #include <utility>
 #include <vector>
+#include <tuple>
 
 #include "gamemanager_ext.hpp"
 #include "iconkitobject.hpp"
-
+#include "needsunlockdialog.hpp"
 namespace IconKit {
 class IconKitWidget : public cocos2d::CCNode {
     CC_SYNTHESIZE_RETAIN(IconKitObject*, _kit_object, KitObject);
@@ -27,6 +28,8 @@ class IconKitWidget : public cocos2d::CCNode {
             return nullptr;
         }
     }
+
+    std::vector<std::pair<uint32_t, UnlockType>> getRequiredUnlocks();
 
     virtual bool init(IconKitObject*);
 

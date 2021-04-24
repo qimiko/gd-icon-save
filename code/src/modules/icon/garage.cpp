@@ -7,8 +7,7 @@ class GJGarageLayer_ext : public GJGarageLayer {
 public:
     void onSaveIcons(cocos2d::CCObject* target)
     {
-        auto dialog = IconKitDialog::create();
-        dialog->setGarageLayer(this);
+        auto dialog = IconKitDialog::create(this);
 
         dialog->show();
     }

@@ -13,10 +13,54 @@ void IconKitWidget::onDeleteKit(cocos2d::CCObject* target)
     this->removeFromParentAndCleanup(true);
 }
 
-void IconKitWidget::onUseKit(cocos2d::CCObject* target)
+std::vector<std::pair<uint32_t, UnlockType>> IconKitWidget::getRequiredUnlocks()
 {
     auto gm = GameManager::sharedState();
+    auto icon = this->getKitObject();
 
+    std::vector<std::pair<uint32_t, UnlockType>> locked_icons;
+
+    std::vector<std::tuple<uint32_t, IconType, UnlockType>> icons {
+        std::make_tuple(icon->getCubeID(), IconType::Cube, UnlockType::Icon),
+        std::make_tuple(icon->getShipID(), IconType::Ship, UnlockType::Ship),
+        std::make_tuple(icon->getBallID(), IconType::Ball, UnlockType::Ball),
+        std::make_tuple(icon->getUfoID(), IconType::Ufo, UnlockType::Ufo),
+        std::make_tuple(icon->getWaveID(), IconType::Wave, UnlockType::Wave),
+        std::make_tuple(icon->getRobotID(), IconType::Robot, UnlockType::Robot),
+        std::make_tuple(icon->getSpiderID(), IconType::Spider, UnlockType::Spider),
+        std::make_tuple(icon->getDeathID(), IconType::DeathEffect, UnlockType::Death),
+        std::make_tuple(icon->getStreakID(), IconType::Special, UnlockType::Streak),
+    };
+
+    for (const auto& icon : icons) {
+        if (!gm->isIconUnlocked(std::get<0>(icon), std::get<1>(icon))) {
+            locked_icons.push_back({ std::get<0>(icon), std::get<2>(icon) });
+        }
+    }
+
+    if (!gm->isColorUnlocked(icon->getColor1(), false)) {
+        locked_icons.push_back({ icon->getColor1(), UnlockType::Color });
+    }
+
+    if (!gm->isColorUnlocked(icon->getColor2(), true)) {
+        locked_icons.push_back({ icon->getColor2(), UnlockType::Color2 });
+    }
+
+    if (icon->getHasGlow() && !gm->isIconUnlocked(2, IconType::Special)) {
+        locked_icons.push_back({ 2, UnlockType::Streak });
+    }
+
+    return locked_icons;
+}
+
+void IconKitWidget::onUseKit(cocos2d::CCObject* target)
+{
+    if (auto req_unlocks = this->getRequiredUnlocks(); req_unlocks.size() > 0) {
+        NeedUnlockDialog::create(req_unlocks)->show();
+        return;
+    }
+
+    auto gm = GameManager::sharedState();
     auto icon = this->getKitObject();
 
     gm->setPlayerFrame(icon->getCubeID());
@@ -33,18 +77,17 @@ void IconKitWidget::onUseKit(cocos2d::CCObject* target)
     gm->setPlayerColor(icon->getColor1());
     gm->setPlayerColor2(icon->getColor2());
 
-    if (this->getGarageLayer() != nullptr) {
-        // update simpleplayer there :)
-    }
-
     auto ccd = cocos2d::CCDirector::sharedDirector();
     auto win_size = ccd->getWinSize();
     auto center_point = cocos2d::CCPoint(win_size.width / 2, win_size.height / 2);
     this->convertToNodeSpace(center_point);
 
-    auto popup = TextAlertPopup::create("Icons loaded", 0.5f, 0.6f);
-    this->addChild(popup, 100);
-    popup->setPosition(center_point);
+    if (this->_garage_layer != nullptr) {
+        // update simpleplayer here :)
+    }
+
+    auto popup = FLAlertLayer::create(nullptr, "Icons loaded", "Custom icon kit has been loaded", "OK", nullptr);
+    popup->show();
 }
 
 bool IconKitWidget::init(IconKitObject* kit_obj)
@@ -103,6 +146,11 @@ bool IconKitWidget::init(IconKitObject* kit_obj)
         static_cast<cocos2d::SEL_MenuHandler>(&IconKitWidget::onDeleteKit));
 
     auto use_kit_sprite = cocos2d::CCSprite::createWithSpriteFrameName("GJ_selectSongBtn_001.png");
+    if (auto req_unlocks = this->getRequiredUnlocks(); req_unlocks.size() > 0) {
+        use_kit_sprite = cocos2d::CCSprite::createWithSpriteFrameName("GJ_reportBtn_001.png");
+        use_kit_sprite->setScale(0.8f);
+    }
+
     auto use_kit_btn = CCMenuItemSpriteExtra::create(
         use_kit_sprite,
         nullptr,
