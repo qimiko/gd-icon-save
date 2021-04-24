@@ -2,13 +2,6 @@
 #ifndef MODULES_DEFAULT_HPP
 #define MODULES_DEFAULT_HPP
 
-#include <stdlib.h>
-#include <time.h>
-#include <errno.h>
-
-#include <array>
-#include <vector>
-
 #include <cocos2dcpp.h>
 
 #include "base/module.hpp"
