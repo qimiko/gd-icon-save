@@ -22,7 +22,7 @@ bool NeedUnlockDialog::init(std::vector<std::pair<uint32_t, UnlockType>> unlockR
         this->addChild(this->internalLayer_);
 
         auto background = cocos2d::extension::CCScale9Sprite::create("square01_001.png", { 0.0f, 0.0f, 94.0f, 94.0f });
-        background->setContentSize(cocos2d::CCSize(300.0f, 250.0f));
+        background->setContentSize(cocos2d::CCSize(350.0f, 250.0f));
         background->setPosition(win_size.width / 2, win_size.height / 2);
         this->internalLayer_->addChild(background);
 
@@ -31,11 +31,13 @@ bool NeedUnlockDialog::init(std::vector<std::pair<uint32_t, UnlockType>> unlockR
         layer_label->setPosition(win_size.width / 2, (win_size.height / 2) + 95.0f);
         layer_label->setScale(0.8f);
 
+				constexpr auto initial_displacement = -115.0f;
+
         // actual layer stuff here
         auto gm = GameManager::sharedState();
 
         auto icon_count = 1u;
-        auto pos_x_tracker = (win_size.width / 2) + -75.0f;
+        auto pos_x_tracker = (win_size.width / 2) + initial_displacement;
         auto pos_y_tracker = (win_size.height / 2) + 55.0f;
 
         for (const auto& icon : unlockRequirements) {
@@ -45,8 +47,8 @@ bool NeedUnlockDialog::init(std::vector<std::pair<uint32_t, UnlockType>> unlockR
             item_icon->setPosition(cocos2d::CCPoint(pos_x_tracker, pos_y_tracker));
 
 						pos_x_tracker += 75.0f;
-            if (icon_count % 3 == 0) {
-								pos_x_tracker = (win_size.width / 2) + -75.0f;
+            if (icon_count % 4 == 0) {
+                pos_x_tracker = (win_size.width / 2) + initial_displacement;
                 pos_y_tracker += -45.0f;
             }
 

@@ -43,6 +43,7 @@ protected:
     int playerSpider_;
     int playerStreak_;
     bool glowEnabled_ : 4;
+
     int playerExplosion_;
 
     int modBadge_;
@@ -73,7 +74,7 @@ public:
 		inline int getPlayerSpider() const { return this->playerSpider_; };
 		inline int getPlayerStreak() const { return this->playerStreak_; };
 		inline bool getGlowEnabled() const { return this->glowEnabled_; };
-		inline bool getPlayerExplosion() const { return this->playerExplosion_; };
+		inline int getPlayerExplosion() const { return this->playerExplosion_; };
 
 		inline int getPlayerColor1() const { return this->color1_; };
 		inline int getPlayerColor2() const { return this->color2_; };
