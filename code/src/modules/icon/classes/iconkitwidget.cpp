@@ -70,7 +70,7 @@ void IconKitWidget::onUseKit(cocos2d::CCObject* target)
     gm->setPlayerDart(icon->getWaveID());
     gm->setPlayerRobot(icon->getRobotID());
     gm->setPlayerSpider(icon->getSpiderID());
-    gm->setPlayerStreak(icon->getStreakID());
+    gm->setPlayerStreak(std::max(icon->getStreakID(), 1u));
     gm->setPlayerDeathEffect(icon->getDeathID());
     gm->setPlayerIconType(icon->getPlayerFrame());
     gm->setPlayerGlow(icon->getHasGlow());
@@ -116,6 +116,7 @@ void IconKitWidget::onUseKit(cocos2d::CCObject* target)
         this->_garage_layer->updatePlayerColors();
     }
 
+    // the scrollinglayer we use takes charge over literally every other thing in the game besides yet another alert
     auto popup = FLAlertLayer::create(nullptr, "Icons loaded", "Custom icon kit has been loaded to your user.", "OK", nullptr);
     popup->show();
 }
